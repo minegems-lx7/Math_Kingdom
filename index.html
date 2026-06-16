@@ -1,59 +1,278 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="he" data-lang="he">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Description" content="Math Kingdom support page — assistance et confidentialité / עמוד תמיכה">
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #000000; color: rgba(0, 0, 0, 0.85); -webkit-text-stroke: rgba(0, 0, 0, 0.85)}
-    p.p3 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p5 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px 'Times New Roman'; -webkit-text-stroke: #000000}
-    p.p6 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #0000e9; -webkit-text-stroke: #0000e9}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    span.s1 {font: 11.0px 'Arial Hebrew'; font-kerning: none; background-color: #b3b3b3}
-    span.s2 {font: 12.0px Times; font-kerning: none; color: #000000; -webkit-text-stroke: 0px #000000}
-    span.s3 {font-kerning: none; background-color: #b3b3b3}
-    span.s4 {font-kerning: none}
-    span.s5 {font: 12.0px 'Times New Roman'; font-kerning: none}
-    span.s6 {font: 18.0px '.Times Fallback'; font-kerning: none}
-    span.s7 {font: 12.0px Times; font-kerning: none}
-    span.s8 {text-decoration: underline ; font-kerning: none}
-    span.s9 {font: 12.0px 'Times New Roman'; text-decoration: underline ; font-kerning: none; color: #0000e9; -webkit-text-stroke: 0px #0000e9}
-    span.s10 {font: 12.0px Times; text-decoration: underline ; font-kerning: none; color: #0000e9; -webkit-text-stroke: 0px #0000e9}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Math Kingdom — Support / תמיכה</title>
+<meta name="description" content="Math Kingdom support page — assistance et confidentialité / עמוד תמיכה">
+<style>
+/* Math Kingdom — support & privacy site
+   Palette (Coastal World):
+   cream  #FBF6EC | ink #243B36 | sky #2BB3C0
+   green  #1B7A52 | gold #F2B53B | coral #E8674C */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;800&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #FBF6EC;
+  --ink:   #243B36;
+  --sky:   #2BB3C0;
+  --green: #1B7A52;
+  --gold:  #F2B53B;
+  --coral: #E8674C;
+  --paper: #FFFFFF;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Rubik', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(120% 90% at 50% -10%, #B6E8E5 0%, var(--cream) 55%);
+  min-height: 100vh;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 680px; margin: 0 auto; padding: 0 22px 72px; }
+
+/* ---------- language toggle ---------- */
+.langbar {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 20px 0 8px;
+}
+.langbar button {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--green);
+  background: rgba(255,255,255,0.6);
+  border: 1.5px solid rgba(27,122,82,0.25);
+  border-radius: 999px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: background .15s, color .15s, transform .1s;
+}
+.langbar button:hover { transform: translateY(-1px); }
+.langbar button.active {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+.langbar button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* ---------- hero ---------- */
+.hero { text-align: center; padding: 18px 0 8px; }
+
+.crest { width: 132px; height: 132px; margin: 0 auto 18px; display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  .crest { animation: bob 4.5s ease-in-out infinite; }
+  @keyframes bob {
+    0%,100% { transform: translateY(0) rotate(-1.5deg); }
+    50%     { transform: translateY(-9px) rotate(1.5deg); }
+  }
+}
+
+.hero h1 {
+  font-weight: 800;
+  font-size: clamp(38px, 9vw, 58px);
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  background: linear-gradient(120deg, var(--green), var(--sky));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero .tag {
+  font-size: clamp(16px, 4vw, 19px);
+  font-weight: 500;
+  color: #4a615a;
+  margin-top: 10px;
+}
+
+/* ---------- cards ---------- */
+.card {
+  background: var(--paper);
+  border-radius: 22px;
+  padding: 28px 26px;
+  margin-top: 22px;
+  box-shadow: 0 1px 0 rgba(36,59,54,0.04),
+              0 18px 40px -22px rgba(27,122,82,0.35);
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+h2::before {
+  content: "";
+  width: 11px; height: 11px;
+  border-radius: 3px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex: none;
+}
+
+p { margin-bottom: 12px; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--coral); font-weight: 600; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.mail {
+  display: inline-block;
+  margin-top: 6px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  background: var(--coral);
+  padding: 12px 22px;
+  border-radius: 999px;
+  box-shadow: 0 12px 24px -12px var(--coral);
+}
+.mail:hover { text-decoration: none; filter: brightness(1.05); }
+.mail:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+/* ---------- FAQ ---------- */
+.q { font-weight: 600; color: var(--green); margin-top: 18px; margin-bottom: 4px; }
+.q:first-of-type { margin-top: 4px; }
+
+/* ---------- footer ---------- */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #6b7e78;
+}
+footer a { color: var(--green); }
+
+/* ---------- language visibility & direction ---------- */
+[data-lang="he"] .lang-fr,
+[data-lang="he"] .lang-en { display: none; }
+[data-lang="fr"] .lang-he,
+[data-lang="fr"] .lang-en { display: none; }
+
+[data-lang="he"] .dir { direction: rtl; text-align: right; }
+[data-lang="fr"] .dir { direction: ltr; text-align: left; }
+[data-lang="he"] .hero, [data-lang="he"] footer { /* keep hero centered */ }
+.hero, footer { direction: ltr; }
+
+</style>
 </head>
 <body>
-<p class="p1"><span class="s1">עברית</span><span class="s2"> </span><span class="s3">Français</span></p>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; -webkit-text-stroke: #000000"><span class="s4"><b>Math Kingdom</b></span></h1>
-<p class="p3"><span class="s5">לומדים</span><span class="s4"> </span><span class="s5">את</span><span class="s4"> </span><span class="s5">לוח</span><span class="s4"> </span><span class="s5">הכפל</span><span class="s4"> </span><span class="s5">דרך</span><span class="s4"> </span><span class="s5">הרפתקה</span><span class="s4"> Apprendre les tables en vivant l'aventure</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; -webkit-text-stroke: #000000"><span class="s6"><b>צריכים</b></span><span class="s4"><b> </b></span><span class="s6"><b>עזרה</b></span><span class="s4"><b>? Besoin d'aide ?</b></span></h2>
-<p class="p5"><span class="s4">שמחים</span><span class="s7"> </span><span class="s4">לעזור</span><span class="s7">. </span><span class="s4">לכל</span><span class="s7"> </span><span class="s4">שאלה</span><span class="s7">, </span><span class="s4">בעיה</span><span class="s7"> </span><span class="s4">טכנית</span><span class="s7"> </span><span class="s4">או</span><span class="s7"> </span><span class="s4">הצעה</span><span class="s7"> </span><span class="s4">לשיפור</span><span class="s7"> — </span><span class="s4">כתבו</span><span class="s7"> </span><span class="s4">לנו</span><span class="s7"> </span><span class="s4">ונחזור</span><span class="s7"> </span><span class="s4">אליכם</span><span class="s7"> </span><span class="s4">בהקדם</span><span class="s7">.</span></p>
-<p class="p3"><span class="s4">Nous sommes là pour vous aider. Pour toute question, problème technique ou suggestion, écrivez-nous et nous reviendrons vers vous rapidement.</span></p>
-<p class="p6"><span class="s8"><a href="mailto:CONTACT@EXEMPLE.COM">ah131087@gmail.com</a></span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; -webkit-text-stroke: #000000"><span class="s6"><b>שאלות</b></span><span class="s4"><b> </b></span><span class="s6"><b>נפוצות</b></span><span class="s4"><b> Questions fréquentes</b></span></h2>
-<p class="p5"><span class="s4">איך</span><span class="s7"> </span><span class="s4">מגיעים</span><span class="s7"> </span><span class="s4">לאזור</span><span class="s7"> </span><span class="s4">ההורים</span><span class="s7">?</span></p>
-<p class="p5"><span class="s4">לחיצה</span><span class="s7"> </span><span class="s4">ארוכה</span><span class="s7"> </span><span class="s4">על</span><span class="s7"> </span><span class="s4">פינת</span><span class="s7"> </span><span class="s4">המסך</span><span class="s7"> </span><span class="s4">פותחת</span><span class="s7"> </span><span class="s4">את</span><span class="s7"> </span><span class="s4">לוח</span><span class="s7"> </span><span class="s4">הבקרה</span><span class="s7"> </span><span class="s4">להורים</span><span class="s7">, </span><span class="s4">שם</span><span class="s7"> </span><span class="s4">רואים</span><span class="s7"> </span><span class="s4">אילו</span><span class="s7"> </span><span class="s4">תרגילים</span><span class="s7"> </span><span class="s4">נשלטו</span><span class="s7"> </span><span class="s4">ואילו</span><span class="s7"> </span><span class="s4">עדיין</span><span class="s7"> </span><span class="s4">בתהליך</span><span class="s7">.</span></p>
-<p class="p5"><span class="s4">האם</span><span class="s7"> </span><span class="s4">האפליקציה</span><span class="s7"> </span><span class="s4">אוספת</span><span class="s7"> </span><span class="s4">מידע</span><span class="s7"> </span><span class="s4">על</span><span class="s7"> </span><span class="s4">הילד</span><span class="s7">?</span></p>
-<p class="p5"><span class="s4">לא</span><span class="s7">. </span><span class="s4">כל</span><span class="s7"> </span><span class="s4">ההתקדמות</span><span class="s7"> </span><span class="s4">נשמרת</span><span class="s7"> </span><span class="s4">מקומית</span><span class="s7"> </span><span class="s4">על</span><span class="s7"> </span><span class="s4">המכשיר</span><span class="s7"> </span><span class="s4">בלבד</span><span class="s7"> </span><span class="s4">ואינה</span><span class="s7"> </span><span class="s4">נשלחת</span><span class="s7"> </span><span class="s4">לשום</span><span class="s7"> </span><span class="s4">מקום</span><span class="s7">. </span><span class="s4">אין</span><span class="s7"> </span><span class="s4">חשבון</span><span class="s7">, </span><span class="s4">אין</span><span class="s7"> </span><span class="s4">פרסומות</span><span class="s7">, </span><span class="s4">אין</span><span class="s7"> </span><span class="s4">מעקב</span><span class="s7">.</span></p>
-<p class="p5"><span class="s4">האם</span><span class="s7"> </span><span class="s4">צריך</span><span class="s7"> </span><span class="s4">חיבור</span><span class="s7"> </span><span class="s4">לאינטרנט</span><span class="s7">?</span></p>
-<p class="p5"><span class="s4">לא</span><span class="s7">. </span><span class="s4">אחרי</span><span class="s7"> </span><span class="s4">ההתקנה</span><span class="s7"> </span><span class="s4">המשחק</span><span class="s7"> </span><span class="s4">עובד</span><span class="s7"> </span><span class="s4">גם</span><span class="s7"> </span><span class="s4">ללא</span><span class="s7"> </span><span class="s4">חיבור</span><span class="s7">.</span></p>
-<p class="p5"><span class="s4">לאיזה</span><span class="s7"> </span><span class="s4">גיל</span><span class="s7"> </span><span class="s4">מתאים</span><span class="s7">?</span></p>
-<p class="p5"><span class="s4">מגיל</span><span class="s7"> 7 </span><span class="s4">בערך</span><span class="s7"> (</span><span class="s4">כיתות</span><span class="s7"> </span><span class="s4">ב׳</span><span class="s7">–</span><span class="s4">ד׳</span><span class="s7">), </span><span class="s4">אך</span><span class="s7"> </span><span class="s4">מתאים</span><span class="s7"> </span><span class="s4">לכל</span><span class="s7"> </span><span class="s4">מי</span><span class="s7"> </span><span class="s4">שרוצה</span><span class="s7"> </span><span class="s4">לתרגל</span><span class="s7"> </span><span class="s4">את</span><span class="s7"> </span><span class="s4">לוח</span><span class="s7"> </span><span class="s4">הכפל</span><span class="s7">.</span></p>
-<p class="p5"><span class="s4">איך</span><span class="s7"> </span><span class="s4">מאפסים</span><span class="s7"> </span><span class="s4">את</span><span class="s7"> </span><span class="s4">ההתקדמות</span><span class="s7">?</span></p>
-<p class="p5"><span class="s4">אפשר</span><span class="s7"> </span><span class="s4">לאפס</span><span class="s7"> </span><span class="s4">מתוך</span><span class="s7"> </span><span class="s4">אזור</span><span class="s7"> </span><span class="s4">ההורים</span><span class="s7">. </span><span class="s4">שימו</span><span class="s7"> </span><span class="s4">לב</span><span class="s7"> — </span><span class="s4">האיפוס</span><span class="s7"> </span><span class="s4">בלתי</span><span class="s7"> </span><span class="s4">הפיך</span><span class="s7">.</span></p>
-<p class="p3"><span class="s4">Comment accéder à l'espace parent ?</span></p>
-<p class="p3"><span class="s4">Un appui long sur un coin de l'écran ouvre le tableau de bord parent : vous y voyez les multiplications maîtrisées et celles encore en cours.</span></p>
-<p class="p3"><span class="s4">L'application collecte-t-elle des données sur l'enfant ?</span></p>
-<p class="p3"><span class="s4">Non. Toute la progression est enregistrée localement sur l'appareil et n'est jamais transmise. Aucun compte, aucune publicité, aucun suivi.</span></p>
-<p class="p3"><span class="s4">Faut-il une connexion internet ?</span></p>
-<p class="p3"><span class="s4">Non. Une fois installé, le jeu fonctionne hors ligne.</span></p>
-<p class="p3"><span class="s4">À partir de quel âge ?</span></p>
-<p class="p3"><span class="s4">Dès 7 ans environ (CE1 à CM1), mais adapté à toute personne souhaitant réviser ses tables.</span></p>
-<p class="p3"><span class="s4">Comment réinitialiser la progression ?</span></p>
-<p class="p3"><span class="s4">La réinitialisation se fait depuis l'espace parent. Attention : elle est définitive.</span></p>
-<p class="p7"><span class="s4">© 2026 Math Kingdom · <a href="file:///Users/alexhadadbeachbum/Downloads/privacy.html"><span class="s9">מדיניות</span><span class="s10"> </span><span class="s9">פרטיות</span></a> © 2026 Math Kingdom · <a href="file:///Users/alexhadadbeachbum/Downloads/privacy.html"><span class="s10">Politique de confidentialité</span></a></span></p>
+<div class="wrap">
+
+  <nav class="langbar" aria-label="Language">
+    <button data-set="he" class="active">עברית</button>
+    <button data-set="fr">Français</button>
+  </nav>
+
+  <header class="hero">
+    <!-- Crest: shield with a golden × and a little crown -->
+    <svg class="crest" viewBox="0 0 120 120" role="img" aria-label="Math Kingdom crest">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2BB3C0"/>
+          <stop offset="1" stop-color="#1B7A52"/>
+        </linearGradient>
+      </defs>
+      <!-- crown -->
+      <path d="M40 26 L48 16 L60 24 L72 16 L80 26 L78 34 L42 34 Z"
+            fill="#F2B53B" stroke="#D89A1E" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="48" cy="15" r="3.4" fill="#E8674C"/>
+      <circle cx="60" cy="22" r="3.4" fill="#E8674C"/>
+      <circle cx="72" cy="15" r="3.4" fill="#E8674C"/>
+      <!-- shield -->
+      <path d="M30 40 H90 V70 C90 88 72 98 60 104 C48 98 30 88 30 70 Z"
+            fill="url(#sky)" stroke="#16624180" stroke-width="2.5"/>
+      <!-- multiplication sign -->
+      <g stroke="#FBF6EC" stroke-width="9" stroke-linecap="round">
+        <line x1="49" y1="58" x2="71" y2="80"/>
+        <line x1="71" y1="58" x2="49" y2="80"/>
+      </g>
+    </svg>
+
+    <h1>Math Kingdom</h1>
+    <p class="tag">
+      <span class="lang-he">לומדים את לוח הכפל דרך הרפתקה</span>
+      <span class="lang-fr">Apprendre les tables en vivant l'aventure</span>
+    </p>
+  </header>
+
+  <!-- ===== SUPPORT ===== -->
+  <section class="card dir">
+    <h2>
+      <span class="lang-he">צריכים עזרה?</span>
+      <span class="lang-fr">Besoin d'aide ?</span>
+    </h2>
+    <p class="lang-he">שמחים לעזור. לכל שאלה, בעיה טכנית או הצעה לשיפור — כתבו לנו ונחזור אליכם בהקדם.</p>
+    <p class="lang-fr">Nous sommes là pour vous aider. Pour toute question, problème technique ou suggestion, écrivez-nous et nous reviendrons vers vous rapidement.</p>
+    <a class="mail" href="mailto:CONTACT@EXEMPLE.COM">CONTACT@EXEMPLE.COM</a>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="card dir">
+    <h2>
+      <span class="lang-he">שאלות נפוצות</span>
+      <span class="lang-fr">Questions fréquentes</span>
+    </h2>
+
+    <!-- Hebrew FAQ -->
+    <div class="lang-he">
+      <p class="q">איך מגיעים לאזור ההורים?</p>
+      <p>לחיצה ארוכה על פינת המסך פותחת את לוח הבקרה להורים, שם רואים אילו תרגילים נשלטו ואילו עדיין בתהליך.</p>
+      <p class="q">האם האפליקציה אוספת מידע על הילד?</p>
+      <p>לא. כל ההתקדמות נשמרת מקומית על המכשיר בלבד ואינה נשלחת לשום מקום. אין חשבון, אין פרסומות, אין מעקב.</p>
+      <p class="q">האם צריך חיבור לאינטרנט?</p>
+      <p>לא. אחרי ההתקנה המשחק עובד גם ללא חיבור.</p>
+      <p class="q">לאיזה גיל מתאים?</p>
+      <p>מגיל 7 בערך (כיתות ב׳–ד׳), אך מתאים לכל מי שרוצה לתרגל את לוח הכפל.</p>
+      <p class="q">איך מאפסים את ההתקדמות?</p>
+      <p>אפשר לאפס מתוך אזור ההורים. שימו לב — האיפוס בלתי הפיך.</p>
+    </div>
+
+    <!-- French FAQ -->
+    <div class="lang-fr">
+      <p class="q">Comment accéder à l'espace parent ?</p>
+      <p>Un appui long sur un coin de l'écran ouvre le tableau de bord parent : vous y voyez les multiplications maîtrisées et celles encore en cours.</p>
+      <p class="q">L'application collecte-t-elle des données sur l'enfant ?</p>
+      <p>Non. Toute la progression est enregistrée localement sur l'appareil et n'est jamais transmise. Aucun compte, aucune publicité, aucun suivi.</p>
+      <p class="q">Faut-il une connexion internet ?</p>
+      <p>Non. Une fois installé, le jeu fonctionne hors ligne.</p>
+      <p class="q">À partir de quel âge ?</p>
+      <p>Dès 7 ans environ (CE1 à CM1), mais adapté à toute personne souhaitant réviser ses tables.</p>
+      <p class="q">Comment réinitialiser la progression ?</p>
+      <p>La réinitialisation se fait depuis l'espace parent. Attention : elle est définitive.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span class="lang-he">© 2026 Math Kingdom · <a href="privacy.html">מדיניות פרטיות</a></span>
+    <span class="lang-fr">© 2026 Math Kingdom · <a href="privacy.html">Politique de confidentialité</a></span>
+  </footer>
+
+</div>
+
+<script>
+  const root = document.documentElement;
+  document.querySelectorAll('.langbar button').forEach(b => {
+    b.addEventListener('click', () => {
+      const lang = b.dataset.set;
+      root.setAttribute('data-lang', lang);
+      root.setAttribute('lang', lang);
+      document.querySelectorAll('.langbar button').forEach(x => x.classList.toggle('active', x === b));
+    });
+  });
+</script>
 </body>
 </html>
