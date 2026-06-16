@@ -1,0 +1,160 @@
+/* Math Kingdom — support & privacy site
+   Palette (Coastal World):
+   cream  #FBF6EC | ink #243B36 | sky #2BB3C0
+   green  #1B7A52 | gold #F2B53B | coral #E8674C */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;800&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #FBF6EC;
+  --ink:   #243B36;
+  --sky:   #2BB3C0;
+  --green: #1B7A52;
+  --gold:  #F2B53B;
+  --coral: #E8674C;
+  --paper: #FFFFFF;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Rubik', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(120% 90% at 50% -10%, #B6E8E5 0%, var(--cream) 55%);
+  min-height: 100vh;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 680px; margin: 0 auto; padding: 0 22px 72px; }
+
+/* ---------- language toggle ---------- */
+.langbar {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 20px 0 8px;
+}
+.langbar button {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--green);
+  background: rgba(255,255,255,0.6);
+  border: 1.5px solid rgba(27,122,82,0.25);
+  border-radius: 999px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: background .15s, color .15s, transform .1s;
+}
+.langbar button:hover { transform: translateY(-1px); }
+.langbar button.active {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+.langbar button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* ---------- hero ---------- */
+.hero { text-align: center; padding: 18px 0 8px; }
+
+.crest { width: 132px; height: 132px; margin: 0 auto 18px; display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  .crest { animation: bob 4.5s ease-in-out infinite; }
+  @keyframes bob {
+    0%,100% { transform: translateY(0) rotate(-1.5deg); }
+    50%     { transform: translateY(-9px) rotate(1.5deg); }
+  }
+}
+
+.hero h1 {
+  font-weight: 800;
+  font-size: clamp(38px, 9vw, 58px);
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  background: linear-gradient(120deg, var(--green), var(--sky));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero .tag {
+  font-size: clamp(16px, 4vw, 19px);
+  font-weight: 500;
+  color: #4a615a;
+  margin-top: 10px;
+}
+
+/* ---------- cards ---------- */
+.card {
+  background: var(--paper);
+  border-radius: 22px;
+  padding: 28px 26px;
+  margin-top: 22px;
+  box-shadow: 0 1px 0 rgba(36,59,54,0.04),
+              0 18px 40px -22px rgba(27,122,82,0.35);
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+h2::before {
+  content: "";
+  width: 11px; height: 11px;
+  border-radius: 3px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex: none;
+}
+
+p { margin-bottom: 12px; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--coral); font-weight: 600; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.mail {
+  display: inline-block;
+  margin-top: 6px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  background: var(--coral);
+  padding: 12px 22px;
+  border-radius: 999px;
+  box-shadow: 0 12px 24px -12px var(--coral);
+}
+.mail:hover { text-decoration: none; filter: brightness(1.05); }
+.mail:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+/* ---------- FAQ ---------- */
+.q { font-weight: 600; color: var(--green); margin-top: 18px; margin-bottom: 4px; }
+.q:first-of-type { margin-top: 4px; }
+
+/* ---------- footer ---------- */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #6b7e78;
+}
+footer a { color: var(--green); }
+
+/* ---------- language visibility & direction ---------- */
+[data-lang="he"] .lang-fr,
+[data-lang="he"] .lang-en { display: none; }
+[data-lang="fr"] .lang-he,
+[data-lang="fr"] .lang-en { display: none; }
+
+[data-lang="he"] .dir { direction: rtl; text-align: right; }
+[data-lang="fr"] .dir { direction: ltr; text-align: left; }
+[data-lang="he"] .hero, [data-lang="he"] footer { /* keep hero centered */ }
+.hero, footer { direction: ltr; }
